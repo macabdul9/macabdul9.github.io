@@ -9,6 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <script>
+      // Function to update the date dynamically
+      document.addEventListener("DOMContentLoaded", function() {
+        const lastUpdatedElement = document.getElementById('last-updated');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date().toLocaleDateString(undefined, options);
+        lastUpdatedElement.textContent = `Last updated: ${today}`;
+      });
+    </script>
     
   </head>
 
@@ -286,6 +296,13 @@
                 </p>
               </td>
             </tr>
+            <!-- Last updated row -->
+            <tr>
+            <td style="padding:0px;text-align:center;font-size:small;" id="last-updated">
+              <!-- The JavaScript will automatically insert the current date here -->
+            </td>
+          </tr>
+
           </tbody></table>
         </td>
       </tr>
